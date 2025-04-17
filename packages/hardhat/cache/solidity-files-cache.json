@@ -1,0 +1,875 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\YourContract.sol": {
+      "lastModificationDate": 1744501198361,
+      "contentHash": "fd06d4791aa5d282a28da26b6efe2c57",
+      "sourceName": "contracts/YourContract.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.0 <0.9.0"
+      ],
+      "artifacts": [
+        "YourContract"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1744501290377,
+      "contentHash": "681c532e816169606d13a5fe8b475074",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\interfaces\\IERC20.sol": {
+      "lastModificationDate": 1741465581694,
+      "contentHash": "09fc9ad3f6b224510003972021a3fa11",
+      "sourceName": "contracts/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\UniswapV2Router.sol": {
+      "lastModificationDate": 1741460809592,
+      "contentHash": "5546ac346449a888c3d28c7d14e74f0c",
+      "sourceName": "contracts/UniswapV2Router.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IUniswapV2Factory.sol",
+        "./interfaces/IUniswapV2Router.sol",
+        "./interfaces/IUniswapV2Pair.sol",
+        "./interfaces/IERC20.sol",
+        "./interfaces/IWETH.sol",
+        "./libraries/TransferHelper.sol",
+        "./libraries/UniswapV2Library.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "UniswapV2Router"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\interfaces\\IUniswapV2Router.sol": {
+      "lastModificationDate": 1741458771738,
+      "contentHash": "d492802d614d3c8a7a335a5472d15289",
+      "sourceName": "contracts/interfaces/IUniswapV2Router.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IUniswapV2Router01.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "IUniswapV2Router"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\interfaces\\IUniswapV2Factory.sol": {
+      "lastModificationDate": 1741458771737,
+      "contentHash": "80f2893d192a1cfab8d73e75f0dedead",
+      "sourceName": "contracts/interfaces/IUniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "IUniswapV2Factory"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\interfaces\\IWETH.sol": {
+      "lastModificationDate": 1741458771739,
+      "contentHash": "f58ef230fd1ac13f9ac302062d20162f",
+      "sourceName": "contracts/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\interfaces\\IUniswapV2Pair.sol": {
+      "lastModificationDate": 1741458771737,
+      "contentHash": "2aa78faa15e1303e0940767cfc381da3",
+      "sourceName": "contracts/interfaces/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./IUniswapV2ERC20.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "IUniswapV2Pair"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\libraries\\TransferHelper.sol": {
+      "lastModificationDate": 1741458771740,
+      "contentHash": "672062401a18e50089a0c6fbab7b4ec8",
+      "sourceName": "contracts/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\libraries\\UniswapV2Library.sol": {
+      "lastModificationDate": 1741458771741,
+      "contentHash": "8da65eefdf57cf3b367cb9f4afb17256",
+      "sourceName": "contracts/libraries/UniswapV2Library.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IUniswapV2Pair.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "UniswapV2Library"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\interfaces\\IUniswapV2Router01.sol": {
+      "lastModificationDate": 1741458771738,
+      "contentHash": "7f712365dcbdb6411f09d54905d0dfa3",
+      "sourceName": "contracts/interfaces/IUniswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "IUniswapV2Router01"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\interfaces\\IUniswapV2ERC20.sol": {
+      "lastModificationDate": 1741458771736,
+      "contentHash": "4ced1c8dacc1db3676ec90ff3b853975",
+      "sourceName": "contracts/interfaces/IUniswapV2ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "IUniswapV2ERC20"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\UniswapV2Pair.sol": {
+      "lastModificationDate": 1741460852357,
+      "contentHash": "2a3e2afbee2e3a9f27732a7817b970f2",
+      "sourceName": "contracts/UniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IUniswapV2Pair.sol",
+        "./UniswapV2ERC20.sol",
+        "./libraries/Math.sol",
+        "./libraries/UQ112x112.sol",
+        "./interfaces/IERC20.sol",
+        "./interfaces/IUniswapV2Factory.sol",
+        "./interfaces/IUniswapV2Callee.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "UniswapV2Pair"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\libraries\\Math.sol": {
+      "lastModificationDate": 1741458771740,
+      "contentHash": "b91da94e7ed4f2c5568dd01829f6729a",
+      "sourceName": "contracts/libraries/Math.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\libraries\\UQ112x112.sol": {
+      "lastModificationDate": 1741458771741,
+      "contentHash": "01c5de3fcd0a71260fef0e47d670cb12",
+      "sourceName": "contracts/libraries/UQ112x112.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "UQ112x112"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\UniswapV2ERC20.sol": {
+      "lastModificationDate": 1741462401159,
+      "contentHash": "75a3b75ba6bfb4047d94ff5188db8507",
+      "sourceName": "contracts/UniswapV2ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IUniswapV2ERC20.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "UniswapV2ERC20"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\interfaces\\IUniswapV2Callee.sol": {
+      "lastModificationDate": 1741458771736,
+      "contentHash": "09219c955d6bce61dee88342e4fb6eb1",
+      "sourceName": "contracts/interfaces/IUniswapV2Callee.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "IUniswapV2Callee"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\UniswapV2Factory.sol": {
+      "lastModificationDate": 1741461691093,
+      "contentHash": "e035e4c5d815a5c7a0f5f46ceba55378",
+      "sourceName": "contracts/UniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IUniswapV2Factory.sol",
+        "./interfaces/IUniswapV2Pair.sol",
+        "./UniswapV2Pair.sol"
+      ],
+      "versionPragmas": [
+        "=0.8.4"
+      ],
+      "artifacts": [
+        "UniswapV2Factory"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\WETH9.sol": {
+      "lastModificationDate": 1744507138281,
+      "contentHash": "55cf2ba7144fb96dda69d716e5b8263e",
+      "sourceName": "contracts/WETH9.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "WETH9"
+      ]
+    },
+    "D:\\ms-information-systems\\Spring-2025\\Cryptocurrency\\homeworks\\homework-6\\hw-6\\packages\\hardhat\\contracts\\TestToken.sol": {
+      "lastModificationDate": 1744513168622,
+      "contentHash": "99e5dadec72960f0b6a3665be0f7ab13",
+      "sourceName": "contracts/TestToken.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TestToken"
+      ]
+    }
+  }
+}

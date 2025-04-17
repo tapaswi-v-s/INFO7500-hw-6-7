@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/TestToken.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n/**\r\n * @title TestToken\r\n * @dev A simple ERC20 token for testing Uniswap V2 functionality\r\n */\r\ncontract TestToken {\r\n    string public name;\r\n    string public symbol;\r\n    uint8 public constant decimals = 18;\r\n    uint256 public totalSupply;\r\n    \r\n    mapping(address => uint256) public balanceOf;\r\n    mapping(address => mapping(address => uint256)) public allowance;\r\n    \r\n    event Transfer(address indexed from, address indexed to, uint256 value);\r\n    event Approval(address indexed owner, address indexed spender, uint256 value);\r\n    \r\n    /**\r\n     * @dev Constructor that gives the msg.sender all existing tokens\r\n     * @param _name Name of the token\r\n     * @param _symbol Symbol of the token\r\n     * @param _initialSupply Initial token supply (in tokens, not wei)\r\n     */\r\n    constructor(string memory _name, string memory _symbol, uint256 _initialSupply) {\r\n        name = _name;\r\n        symbol = _symbol;\r\n        // Convert initial supply from tokens to wei (with 18 decimals)\r\n        uint256 initialSupplyInWei = _initialSupply * 10**uint256(decimals);\r\n        _mint(msg.sender, initialSupplyInWei);\r\n    }\r\n    \r\n    /**\r\n     * @dev Transfer tokens to a specified address\r\n     * @param _to The address to transfer to\r\n     * @param _value The amount to be transferred\r\n     * @return success boolean indicating whether the operation succeeded\r\n     */\r\n    function transfer(address _to, uint256 _value) public returns (bool success) {\r\n        require(balanceOf[msg.sender] >= _value, \"Insufficient balance\");\r\n        _transfer(msg.sender, _to, _value);\r\n        return true;\r\n    }\r\n    \r\n    /**\r\n     * @dev Transfer tokens from one address to another\r\n     * @param _from address The address which you want to send tokens from\r\n     * @param _to address The address which you want to transfer to\r\n     * @param _value uint256 the amount of tokens to be transferred\r\n     * @return success boolean indicating whether the operation succeeded\r\n     */\r\n    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {\r\n        require(balanceOf[_from] >= _value, \"Insufficient balance\");\r\n        require(allowance[_from][msg.sender] >= _value, \"Insufficient allowance\");\r\n        \r\n        allowance[_from][msg.sender] -= _value;\r\n        _transfer(_from, _to, _value);\r\n        return true;\r\n    }\r\n    \r\n    /**\r\n     * @dev Approve the passed address to spend the specified amount of tokens on behalf of msg.sender\r\n     * @param _spender The address which will spend the funds\r\n     * @param _value The amount of tokens to be spent\r\n     * @return success boolean indicating whether the operation succeeded\r\n     */\r\n    function approve(address _spender, uint256 _value) public returns (bool success) {\r\n        allowance[msg.sender][_spender] = _value;\r\n        emit Approval(msg.sender, _spender, _value);\r\n        return true;\r\n    }\r\n    \r\n    /**\r\n     * @dev Internal function to mint tokens\r\n     * @param _to The address that will receive the minted tokens\r\n     * @param _value The amount of tokens to mint\r\n     */\r\n    function _mint(address _to, uint256 _value) internal {\r\n        require(_to != address(0), \"ERC20: mint to the zero address\");\r\n        \r\n        totalSupply += _value;\r\n        balanceOf[_to] += _value;\r\n        emit Transfer(address(0), _to, _value);\r\n    }\r\n    \r\n    /**\r\n     * @dev Public mint function (for testing purposes only)\r\n     * In a real token, this would be restricted to an owner or have other access controls\r\n     */\r\n    function mint(address _to, uint256 _value) public {\r\n        _mint(_to, _value);\r\n    }\r\n    \r\n    /**\r\n     * @dev Internal function to handle transfers\r\n     */\r\n    function _transfer(address _from, address _to, uint256 _value) internal {\r\n        require(_to != address(0), \"ERC20: transfer to the zero address\");\r\n        \r\n        balanceOf[_from] -= _value;\r\n        balanceOf[_to] += _value;\r\n        emit Transfer(_from, _to, _value);\r\n    }\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

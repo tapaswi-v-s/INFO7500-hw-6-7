@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/WETH9.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\n/**\r\n * @title WETH9\r\n * @dev Wrapped Ether (WETH) implementation\r\n * This contract allows users to wrap ETH (deposit) and unwrap ETH (withdraw)\r\n * It follows ERC20 standard for token operations\r\n */\r\ncontract WETH9 {\r\n    string public name = \"Wrapped Ether\";\r\n    string public symbol = \"WETH\";\r\n    uint8 public decimals = 18;\r\n\r\n    event Approval(address indexed src, address indexed guy, uint wad);\r\n    event Transfer(address indexed src, address indexed dst, uint wad);\r\n    event Deposit(address indexed dst, uint wad);\r\n    event Withdrawal(address indexed src, uint wad);\r\n\r\n    mapping(address => uint) public balanceOf;\r\n    mapping(address => mapping(address => uint)) public allowance;\r\n\r\n    /**\r\n     * @dev Fallback function to handle ETH deposits\r\n     */\r\n    receive() external payable {\r\n        deposit();\r\n    }\r\n\r\n    /**\r\n     * @dev Deposit ETH and receive WETH tokens\r\n     */\r\n    function deposit() public payable {\r\n        balanceOf[msg.sender] += msg.value;\r\n        emit Deposit(msg.sender, msg.value);\r\n    }\r\n\r\n    /**\r\n     * @dev Withdraw ETH by burning WETH tokens\r\n     * @param wad Amount of WETH to burn\r\n     */\r\n    function withdraw(uint wad) public {\r\n        require(balanceOf[msg.sender] >= wad, \"WETH: insufficient balance\");\r\n        balanceOf[msg.sender] -= wad;\r\n        payable(msg.sender).transfer(wad);\r\n        emit Withdrawal(msg.sender, wad);\r\n    }\r\n\r\n    /**\r\n     * @dev Get total supply (equals ETH locked in contract)\r\n     */\r\n    function totalSupply() public view returns (uint) {\r\n        return address(this).balance;\r\n    }\r\n\r\n    /**\r\n     * @dev Approve spender to spend tokens\r\n     * @param guy Address of the spender\r\n     * @param wad Amount of tokens to approve\r\n     */\r\n    function approve(address guy, uint wad) public returns (bool) {\r\n        allowance[msg.sender][guy] = wad;\r\n        emit Approval(msg.sender, guy, wad);\r\n        return true;\r\n    }\r\n\r\n    /**\r\n     * @dev Transfer tokens to another address\r\n     * @param dst Destination address\r\n     * @param wad Amount of tokens\r\n     */\r\n    function transfer(address dst, uint wad) public returns (bool) {\r\n        return transferFrom(msg.sender, dst, wad);\r\n    }\r\n\r\n    /**\r\n     * @dev Transfer tokens from one address to another\r\n     * @param src Source address\r\n     * @param dst Destination address\r\n     * @param wad Amount of tokens\r\n     */\r\n    function transferFrom(address src, address dst, uint wad) public returns (bool) {\r\n        require(balanceOf[src] >= wad, \"WETH: insufficient balance\");\r\n\r\n        if (src != msg.sender && allowance[src][msg.sender] != type(uint).max) {\r\n            require(allowance[src][msg.sender] >= wad, \"WETH: insufficient allowance\");\r\n            allowance[src][msg.sender] -= wad;\r\n        }\r\n\r\n        balanceOf[src] -= wad;\r\n        balanceOf[dst] += wad;\r\n\r\n        emit Transfer(src, dst, wad);\r\n\r\n        return true;\r\n    }\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

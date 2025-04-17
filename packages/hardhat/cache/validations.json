@@ -1,0 +1,136 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/YourContract.sol:YourContract": {
+        "src": "contracts\\YourContract.sol:15",
+        "version": {
+          "withMetadata": "5ff2b6b0289f97d3df46d8b191c3aba1fe4aafd04e8453da423347444ae0e195",
+          "withoutMetadata": "296d10409a117e916556a2e60642043b3658768ba92d5e5ac87240775e07c938",
+          "linkedWithoutMetadata": "296d10409a117e916556a2e60642043b3658768ba92d5e5ac87240775e07c938"
+        },
+        "inherit": [],
+        "libraries": [
+          "hardhat/console.sol:console"
+        ],
+        "methods": [
+          "(address)",
+          "setGreeting(string)",
+          "withdraw()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "YourContract",
+            "src": "contracts\\YourContract.sol:28"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "owner",
+            "src": "contracts\\YourContract.sol:17"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "greeting",
+            "src": "contracts\\YourContract.sol:18"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "premium",
+            "src": "contracts\\YourContract.sol:19"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "totalCounter",
+            "src": "contracts\\YourContract.sol:20"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "greeting",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "YourContract",
+              "src": "contracts\\YourContract.sol:18"
+            },
+            {
+              "label": "premium",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_bool",
+              "contract": "YourContract",
+              "src": "contracts\\YourContract.sol:19"
+            },
+            {
+              "label": "totalCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "YourContract",
+              "src": "contracts\\YourContract.sol:20"
+            },
+            {
+              "label": "userGreetingCounter",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "YourContract",
+              "src": "contracts\\YourContract.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.4"
+      },
+      "hardhat/console.sol:console": {
+        "src": "hardhat\\console.sol:4",
+        "version": {
+          "withMetadata": "bbd11db2e7e1c853f4c921699fb426faf7e990ee310f290ffd9d8321d77b0cfa",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.4"
+      }
+    }
+  ]
+}
