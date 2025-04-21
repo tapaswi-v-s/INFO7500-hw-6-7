@@ -28,7 +28,11 @@ interface Pool {
   reserve1: ethers.BigNumber;
 }
 
-export const SwapForm: React.FC = () => {
+interface SwapFormProps {
+  nlpEnabled?: boolean;
+}
+
+export const SwapForm: React.FC<SwapFormProps> = ({ nlpEnabled = false }) => {
   const [selectedPool, setSelectedPool] = useState<Pool | null>(null);
   const [inputToken, setInputToken] = useState<Token | null>(null);
   const [outputToken, setOutputToken] = useState<Token | null>(null);
@@ -80,11 +84,18 @@ export const SwapForm: React.FC = () => {
           address: pool.token1,
           symbol: pool.token1Symbol,
         });
+        
+        // Check for NLP input if enabled
+        if (nlpEnabled && window.nlpSwapAmount) {
+          setInputAmount(window.nlpSwapAmount);
+          // Clear it to avoid reusing
+          delete window.nlpSwapAmount;
+        }
       } catch (error) {
         console.error("Error parsing pool data:", error);
       }
     }
-  }, []);
+  }, [nlpEnabled]);
   
   // Check token approval
   useEffect(() => {

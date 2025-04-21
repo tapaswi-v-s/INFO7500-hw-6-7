@@ -349,14 +349,36 @@ export const AddLiquidity: React.FC = () => {
       const routerContract = getRouterContract(signer);
       
       const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutes
-      const amount0Wei = toWei(amount0);
-      const amount1Wei = toWei(amount1);
+      // const amount0Wei = toWei(amount0);
+      // const amount1Wei = toWei(amount1);
+
+      // Use smaller amounts for testing
+      const amount0Wei = toWei("0.001"); // Try with a very small amount first
+      const amount1Wei = toWei("0.001"); // Try with a very small amount first
       
       // Calculate minimum amounts with slippage tolerance
       const slippageMultiplier = ethers.BigNumber.from(Math.floor((100 - slippage) * 100)).div(100);
       const amount0Min = amount0Wei.mul(slippageMultiplier).div(100);
       const amount1Min = amount1Wei.mul(slippageMultiplier).div(100);
       
+      // Check token balances
+      const token0Contract = getERC20Contract(token0.address);
+      const token1Contract = getERC20Contract(token1.address);
+
+      const balance0 = await token0Contract.balanceOf(account);
+      const balance1 = await token1Contract.balanceOf(account);
+
+      console.log(`Your ${token0.symbol} balance: ${fromWei(balance0)}`);
+      console.log(`Your ${token1.symbol} balance: ${fromWei(balance1)}`);
+      console.log(`Attempting to add: ${amount0} ${token0.symbol} and ${amount1} ${token1.symbol}`);
+
+      // Verify you have enough tokens
+      if (toWei(amount0).gt(balance0) || toWei(amount1).gt(balance1)) {
+        showNotification("error", "Insufficient token balance");
+        setIsLoading(false);
+        return;
+      }
+
       // Add liquidity
       const tx = await routerContract.addLiquidity(
         token0.address,
@@ -366,7 +388,8 @@ export const AddLiquidity: React.FC = () => {
         amount0Min,
         amount1Min,
         account,
-        deadline
+        deadline,
+        { gasLimit: 500000 }
       );
       
       showNotification("success", `Liquidity addition submitted: ${tx.hash.slice(0, 6)}...${tx.hash.slice(-4)}`);
